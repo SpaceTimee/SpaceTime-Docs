@@ -22,7 +22,7 @@ const projectNames = readdirSync(rootDir).filter((name) => existsSync(join(rootD
 
 writeFileSync(
   join(rootDir, 'api', 'projects.json'),
-  JSON.stringify(projectNames.map((name) => name.toLowerCase()))
+  JSON.stringify(projectNames.filter((name) => name !== 'home').map((name) => name.toLowerCase()))
 )
 
 for (const projectName of projectNames) {
