@@ -13,10 +13,6 @@ export default function (request: Request) {
 
   const [project] = url.pathname.split('/').filter(Boolean)
 
-  if (projects.includes(project)) {
-    url.pathname = `/${project}/`
-    return Response.redirect(url.toString(), 307)
-  }
-
-  return new Response('Not Found', { status: 404 })
+  url.pathname = projects.includes(project) ? `/${project}/` : '/'
+  return Response.redirect(url.toString(), 307)
 }

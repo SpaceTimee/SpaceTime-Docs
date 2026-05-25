@@ -1,6 +1,8 @@
 ---
 layout: home
 
+titleTemplate: Sheas Cealer Docs
+
 hero:
   name: Sheas Cealer
   text: WPF Powered SNI Concealing Tool
