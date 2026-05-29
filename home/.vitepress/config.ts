@@ -26,10 +26,25 @@ export default withPwa(
       ],
       footer: {
         message: 'Developer ❤ Space Time',
-        copyright: 'Ver. 1.0.0'
+        copyright: 'Ver. 1.0.1'
       },
       search: {
-        provider: 'local'
+        provider: 'algolia',
+        options: {
+          appId: 'I28J8EY0B8',
+          apiKey: '93ec978aaf48a04faaba1df8edb3ddf7',
+          indexName: 'SpaceTime Docs',
+          insights: true,
+          askAi: {
+            assistantId: 'e35a9e5c-06a9-40f6-a067-9613a7af1a2b',
+            indexName: 'SpaceTime Docs Markdown',
+            sidePanel: {
+              panel: {
+                suggestedQuestions: true
+              }
+            }
+          }
+        }
       }
     },
     pwa: {
