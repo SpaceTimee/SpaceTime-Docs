@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  vitepress:
+    hash: 1abacae3d03e165980e4facea16ba664fa5d2f52058c2b65dc20e37db8228cb4
+    path: patches/vitepress.patch
+
 importers:
 
   .:
@@ -40,7 +45,7 @@ importers:
         version: 8.59.4(eslint@10.4.0(jiti@2.7.0))(typescript@6.0.3)
       vitepress:
         specifier: 2.0.0-alpha.17
-        version: 2.0.0-alpha.17(@types/node@25.9.1)(jiti@2.7.0)(postcss@8.5.15)(terser@5.48.0)(tsx@4.22.3)(typescript@6.0.3)
+        version: 2.0.0-alpha.17(patch_hash=1abacae3d03e165980e4facea16ba664fa5d2f52058c2b65dc20e37db8228cb4)(@types/node@25.9.1)(jiti@2.7.0)(postcss@8.5.15)(terser@5.48.0)(tsx@4.22.3)(typescript@6.0.3)
 
 packages:
 
@@ -5316,7 +5321,7 @@ snapshots:
       terser: 5.48.0
       tsx: 4.22.3
 
-  vitepress@2.0.0-alpha.17(@types/node@25.9.1)(jiti@2.7.0)(postcss@8.5.15)(terser@5.48.0)(tsx@4.22.3)(typescript@6.0.3):
+  vitepress@2.0.0-alpha.17(patch_hash=1abacae3d03e165980e4facea16ba664fa5d2f52058c2b65dc20e37db8228cb4)(@types/node@25.9.1)(jiti@2.7.0)(postcss@8.5.15)(terser@5.48.0)(tsx@4.22.3)(typescript@6.0.3):
     dependencies:
       '@docsearch/css': 4.6.3
       '@docsearch/js': 4.6.3
