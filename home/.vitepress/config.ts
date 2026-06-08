@@ -26,7 +26,7 @@ export default withPwa(
       ],
       footer: {
         message: 'Developer ❤ Space Time',
-        copyright: 'Ver. 1.0.2'
+        copyright: 'Ver. 1.0.3'
       },
       search: {
         provider: 'algolia',

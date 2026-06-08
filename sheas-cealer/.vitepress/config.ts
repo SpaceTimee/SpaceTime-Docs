@@ -1,6 +1,7 @@
 import { resolve } from 'node:path'
 import { withPwa } from '@vite-pwa/vitepress'
 import { defineConfig } from 'vitepress'
+import { AtomFeed } from '../../plugins/atom-feed'
 import { buildLocales } from '../../scripts/utils'
 
 const rootLang = 'zh'
@@ -11,7 +12,18 @@ export default withPwa(
     title: 'Sheas Cealer Docs',
     titleTemplate: ':title ❤ Sheas Cealer Docs',
     description: 'Welcome To Sheas Cealer Docs ~',
-    head: [['link', { rel: 'icon', type: 'image/png', href: 'favicon.png' }]],
+    head: [
+      ['link', { rel: 'icon', type: 'image/png', href: 'favicon.png' }],
+      [
+        'link',
+        {
+          rel: 'alternate',
+          type: 'application/atom+xml',
+          title: 'Sheas Cealer Docs',
+          href: 'atom.xml'
+        }
+      ]
+    ],
     lang: rootLang,
     base: '/sheas-cealer/',
     outDir: '../dist/sheas-cealer',
@@ -43,7 +55,7 @@ export default withPwa(
       ],
       footer: {
         message: 'Developer ❤ Space Time',
-        copyright: 'Ver. 1.0.2'
+        copyright: 'Ver. 1.0.3'
       },
       search: {
         provider: 'algolia',
@@ -100,6 +112,18 @@ export default withPwa(
     },
     sitemap: {
       hostname: 'https://docs.spacetimee.xyz/sheas-cealer'
+    },
+    vite: {
+      plugins: [
+        AtomFeed({
+          title: 'Sheas Cealer Docs',
+          description: 'Welcome To Sheas Cealer Docs ~',
+          author: 'Space Time',
+          base: '/sheas-cealer/',
+          siteUrl: 'https://docs.spacetimee.xyz',
+          cacheDir: resolve(import.meta.dirname, 'cache', 'wiki')
+        })
+      ]
     }
   })
 )
